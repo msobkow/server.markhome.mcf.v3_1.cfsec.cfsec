@@ -47,8 +47,8 @@ import io.github.msobkow.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecGrpMembByUUserIdxKey
 {
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSecGroupId();
 	public void setRequiredSecGroupId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSecUserId();

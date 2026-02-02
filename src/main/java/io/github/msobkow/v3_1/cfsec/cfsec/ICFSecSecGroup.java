@@ -51,7 +51,8 @@ public interface ICFSecSecGroup
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String S_SECGROUPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECGROUPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECGROUPID_INIT_VALUE );
 	public static final String NAME_INIT_VALUE = new String( "" );
@@ -83,8 +84,8 @@ public interface ICFSecSecGroup
 
 	public ICFSecCluster getRequiredContainerCluster();
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(long argClusterId);
-	public long getRequiredClusterId();
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean getRequiredIsVisible();

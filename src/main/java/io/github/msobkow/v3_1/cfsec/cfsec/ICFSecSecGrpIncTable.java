@@ -104,7 +104,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@param	ClusterId	The SecGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecGrpIncByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the SecGrpInc instances identified by the key ClusterIdx.
@@ -165,7 +165,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@param	IncludeGroupId	The SecGrpInc key attribute of the instance generating the id.
 	 */
 	void deleteSecGrpIncByUIncludeIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		CFLibDbKeyHash256 argSecGroupId,
 		CFLibDbKeyHash256 argIncludeGroupId );
 
@@ -238,7 +238,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecGrpInc[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the derived SecGrpInc record instances identified by the duplicate key GroupIdx.
@@ -279,7 +279,7 @@ public interface ICFSecSecGrpIncTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecGrpInc readDerivedByUIncludeIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId );
 
@@ -359,7 +359,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpInc[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the specific SecGrpInc record instances identified by the duplicate key GroupIdx.
@@ -406,7 +406,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpInc readRecByUIncludeIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 IncludeGroupId );
 
@@ -422,7 +422,7 @@ public interface ICFSecSecGrpIncTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpInc[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorSecGrpIncId );
 
 	/**

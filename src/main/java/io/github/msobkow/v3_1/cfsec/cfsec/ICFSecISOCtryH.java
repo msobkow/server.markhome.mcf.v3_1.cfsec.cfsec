@@ -63,8 +63,8 @@ public interface ICFSecISOCtryH
 
 	public ICFSecISOCtryHPKey getPKey();
 	public void setPKey( ICFSecISOCtryHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();

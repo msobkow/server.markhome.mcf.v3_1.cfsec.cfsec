@@ -53,7 +53,8 @@ public interface ICFSecTenant
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String TENANTNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa015;
 	public final static String S_CLASS_CODE = "a015";
@@ -80,8 +81,8 @@ public interface ICFSecTenant
 
 	public ICFSecCluster getRequiredContainerCluster();
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(long argClusterId);
-	public long getRequiredClusterId();
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );
 	@Override

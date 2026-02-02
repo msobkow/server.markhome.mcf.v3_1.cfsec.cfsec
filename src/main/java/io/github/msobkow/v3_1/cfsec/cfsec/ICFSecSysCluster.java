@@ -50,7 +50,8 @@ public interface ICFSecSysCluster
 	public static final int SINGLETONID_MIN_VALUE = 1;
 	public static final int SINGLETONID_MAX_VALUE = 1;
 	public static final int SINGLETONID_INIT_VALUE = 1;
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public final static int CLASS_CODE = 0xa014;
 	public final static String S_CLASS_CODE = "a014";
 
@@ -66,8 +67,8 @@ public interface ICFSecSysCluster
 
 	public ICFSecCluster getRequiredContainerCluster();
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(long argClusterId);
-	public long getRequiredClusterId();
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	@Override
 	public boolean equals( Object obj );
 	

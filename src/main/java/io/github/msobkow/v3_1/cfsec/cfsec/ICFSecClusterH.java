@@ -63,8 +63,8 @@ public interface ICFSecClusterH
 
 	public ICFSecClusterHPKey getPKey();
 	public void setPKey( ICFSecClusterHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
@@ -74,8 +74,8 @@ public interface ICFSecClusterH
 	public CFLibDbKeyHash256 getAuditSessionId();
 	public void setAuditSessionId(CFLibDbKeyHash256 auditSessionId);
 
-	public long getRequiredId();
-	public void setRequiredId( long requiredId );
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 requiredId );
 
 	public String getRequiredFullDomName();
 	public void setRequiredFullDomName( String value );

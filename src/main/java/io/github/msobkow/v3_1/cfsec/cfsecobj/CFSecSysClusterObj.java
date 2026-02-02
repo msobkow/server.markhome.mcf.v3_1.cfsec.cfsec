@@ -353,7 +353,7 @@ public class CFSecSysClusterObj
 	}
 
 	@Override
-	public long getRequiredClusterId() {
+	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSysClusterRec().getRequiredClusterId() );
 	}
 

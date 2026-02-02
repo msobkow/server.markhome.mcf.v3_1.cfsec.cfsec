@@ -63,8 +63,8 @@ public interface ICFSecSecGrpMembH
 
 	public ICFSecSecGrpMembHPKey getPKey();
 	public void setPKey( ICFSecSecGrpMembHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
@@ -77,8 +77,8 @@ public interface ICFSecSecGrpMembH
 	public CFLibDbKeyHash256 getRequiredSecGrpMembId();
 	public void setRequiredSecGrpMembId( CFLibDbKeyHash256 requiredSecGrpMembId );
 
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSecGroupId();
 	public void setRequiredSecGroupId( CFLibDbKeyHash256 value );
 	public CFLibDbKeyHash256 getRequiredSecUserId();

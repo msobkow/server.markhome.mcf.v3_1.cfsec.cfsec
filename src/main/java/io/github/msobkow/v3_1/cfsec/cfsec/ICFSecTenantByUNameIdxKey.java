@@ -47,8 +47,8 @@ import io.github.msobkow.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecTenantByUNameIdxKey
 {
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );
 	@Override

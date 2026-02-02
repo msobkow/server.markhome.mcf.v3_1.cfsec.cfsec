@@ -174,7 +174,7 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	List of CFSecSecGroupObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecGroupObj> readSecGroupByClusterIdx( long ClusterId );
+	List<ICFSecSecGroupObj> readSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Get the map of CFSecSecGroupObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -184,7 +184,7 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	List of CFSecSecGroupObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecGroupObj> readSecGroupByClusterIdx( long ClusterId,
+	List<ICFSecSecGroupObj> readSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead );
 
 	/**
@@ -197,7 +197,7 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	List of CFSecSecGroupObj cached instances sorted by their primary keys for the duplicate ClusterVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( long ClusterId,
+	List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
 	/**
@@ -210,7 +210,7 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	List of CFSecSecGroupObj cached instances sorted by their primary keys for the duplicate ClusterVisIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( long ClusterId,
+	List<ICFSecSecGroupObj> readSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible,
 		boolean forceRead );
 
@@ -224,7 +224,7 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	CFSecSecGroupObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecGroupObj readSecGroupByUNameIdx(long ClusterId,
+	ICFSecSecGroupObj readSecGroupByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -237,28 +237,28 @@ public interface ICFSecSecGroupTableObj
 	 *	@return	CFSecSecGroupObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecSecGroupObj readSecGroupByUNameIdx(long ClusterId,
+	ICFSecSecGroupObj readSecGroupByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String Name,
 		boolean forceRead );
 
 	ICFSecSecGroupObj readCachedSecGroupByIdIdx( CFLibDbKeyHash256 SecGroupId );
 
-	List<ICFSecSecGroupObj> readCachedSecGroupByClusterIdx( long ClusterId );
+	List<ICFSecSecGroupObj> readCachedSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	List<ICFSecSecGroupObj> readCachedSecGroupByClusterVisIdx( long ClusterId,
+	List<ICFSecSecGroupObj> readCachedSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
-	ICFSecSecGroupObj readCachedSecGroupByUNameIdx( long ClusterId,
+	ICFSecSecGroupObj readCachedSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name );
 
 	void deepDisposeSecGroupByIdIdx( CFLibDbKeyHash256 SecGroupId );
 
-	void deepDisposeSecGroupByClusterIdx( long ClusterId );
+	void deepDisposeSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	void deepDisposeSecGroupByClusterVisIdx( long ClusterId,
+	void deepDisposeSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
-	void deepDisposeSecGroupByUNameIdx( long ClusterId,
+	void deepDisposeSecGroupByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -283,7 +283,7 @@ public interface ICFSecSecGroupTableObj
 	 *
 	 *	@param	ClusterId	The SecGroup key attribute of the instance generating the id.
 	 */
-	void deleteSecGroupByClusterIdx( long ClusterId );
+	void deleteSecGroupByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -292,7 +292,7 @@ public interface ICFSecSecGroupTableObj
 	 *
 	 *	@param	IsVisible	The SecGroup key attribute of the instance generating the id.
 	 */
-	void deleteSecGroupByClusterVisIdx( long ClusterId,
+	void deleteSecGroupByClusterVisIdx( CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
 	/**
@@ -302,6 +302,6 @@ public interface ICFSecSecGroupTableObj
 	 *
 	 *	@param	Name	The SecGroup key attribute of the instance generating the id.
 	 */
-	void deleteSecGroupByUNameIdx(long ClusterId,
+	void deleteSecGroupByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String Name );
 }

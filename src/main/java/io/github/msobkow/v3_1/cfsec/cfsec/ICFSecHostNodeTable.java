@@ -104,7 +104,7 @@ public interface ICFSecHostNodeTable
 	 *	@param	ClusterId	The HostNode key attribute of the instance generating the id.
 	 */
 	void deleteHostNodeByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the HostNode instances identified by the key ClusterIdx.
@@ -125,7 +125,7 @@ public interface ICFSecHostNodeTable
 	 *	@param	Description	The HostNode key attribute of the instance generating the id.
 	 */
 	void deleteHostNodeByUDescrIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		String argDescription );
 
 	/**
@@ -147,7 +147,7 @@ public interface ICFSecHostNodeTable
 	 *	@param	HostName	The HostNode key attribute of the instance generating the id.
 	 */
 	void deleteHostNodeByHostNameIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		String argHostName );
 
 	/**
@@ -219,7 +219,7 @@ public interface ICFSecHostNodeTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecHostNode[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read the derived HostNode record instance identified by the unique key UDescrIdx.
@@ -234,7 +234,7 @@ public interface ICFSecHostNodeTable
 	 *		no such existing key value.
 	 */
 	ICFSecHostNode readDerivedByUDescrIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String Description );
 
 	/**
@@ -250,7 +250,7 @@ public interface ICFSecHostNodeTable
 	 *		no such existing key value.
 	 */
 	ICFSecHostNode readDerivedByHostNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String HostName );
 
 	/**
@@ -329,7 +329,7 @@ public interface ICFSecHostNodeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecHostNode[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read the specific HostNode record instance identified by the unique key UDescrIdx.
@@ -346,7 +346,7 @@ public interface ICFSecHostNodeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecHostNode readRecByUDescrIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String Description );
 
 	/**
@@ -364,7 +364,7 @@ public interface ICFSecHostNodeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecHostNode readRecByHostNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String HostName );
 
 	/**
@@ -379,6 +379,6 @@ public interface ICFSecHostNodeTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecHostNode[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorHostNodeId );
 }

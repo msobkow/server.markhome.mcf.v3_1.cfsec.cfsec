@@ -419,7 +419,7 @@ public class CFSecSecGrpMembEditObj
 	}
 
 	@Override
-	public long getRequiredClusterId() {
+	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSecGrpMembRec().getRequiredClusterId() );
 	}
 

@@ -104,7 +104,7 @@ public interface ICFSecTenantTable
 	 *	@param	ClusterId	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the Tenant instances identified by the key ClusterIdx.
@@ -125,7 +125,7 @@ public interface ICFSecTenantTable
 	 *	@param	TenantName	The Tenant key attribute of the instance generating the id.
 	 */
 	void deleteTenantByUNameIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		String argTenantName );
 
 	/**
@@ -197,7 +197,7 @@ public interface ICFSecTenantTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecTenant[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read the derived Tenant record instance identified by the unique key UNameIdx.
@@ -212,7 +212,7 @@ public interface ICFSecTenantTable
 	 *		no such existing key value.
 	 */
 	ICFSecTenant readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -291,7 +291,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read the specific Tenant record instance identified by the unique key UNameIdx.
@@ -308,7 +308,7 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant readRecByUNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -323,6 +323,6 @@ public interface ICFSecTenantTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecTenant[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorId );
 }

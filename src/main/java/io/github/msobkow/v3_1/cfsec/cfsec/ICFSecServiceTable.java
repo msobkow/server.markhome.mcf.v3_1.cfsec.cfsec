@@ -104,7 +104,7 @@ public interface ICFSecServiceTable
 	 *	@param	ClusterId	The Service key attribute of the instance generating the id.
 	 */
 	void deleteServiceByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the Service instances identified by the key ClusterIdx.
@@ -165,7 +165,7 @@ public interface ICFSecServiceTable
 	 *	@param	ServiceTypeId	The Service key attribute of the instance generating the id.
 	 */
 	void deleteServiceByUTypeIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		CFLibDbKeyHash256 argHostNodeId,
 		CFLibDbKeyHash256 argServiceTypeId );
 
@@ -190,7 +190,7 @@ public interface ICFSecServiceTable
 	 *	@param	HostPort	The Service key attribute of the instance generating the id.
 	 */
 	void deleteServiceByUHostPortIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		CFLibDbKeyHash256 argHostNodeId,
 		short argHostPort );
 
@@ -263,7 +263,7 @@ public interface ICFSecServiceTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecService[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the derived Service record instances identified by the duplicate key HostIdx.
@@ -304,7 +304,7 @@ public interface ICFSecServiceTable
 	 *		no such existing key value.
 	 */
 	ICFSecService readDerivedByUTypeIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
@@ -323,7 +323,7 @@ public interface ICFSecServiceTable
 	 *		no such existing key value.
 	 */
 	ICFSecService readDerivedByUHostPortIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 
@@ -403,7 +403,7 @@ public interface ICFSecServiceTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecService[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the specific Service record instances identified by the duplicate key HostIdx.
@@ -450,7 +450,7 @@ public interface ICFSecServiceTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecService readRecByUTypeIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
@@ -471,7 +471,7 @@ public interface ICFSecServiceTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecService readRecByUHostPortIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 
@@ -487,7 +487,7 @@ public interface ICFSecServiceTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecService[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorServiceId );
 
 	/**

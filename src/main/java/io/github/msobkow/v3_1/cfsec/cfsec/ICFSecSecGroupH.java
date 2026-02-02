@@ -63,8 +63,8 @@ public interface ICFSecSecGroupH
 
 	public ICFSecSecGroupHPKey getPKey();
 	public void setPKey( ICFSecSecGroupHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
@@ -77,8 +77,8 @@ public interface ICFSecSecGroupH
 	public CFLibDbKeyHash256 getRequiredSecGroupId();
 	public void setRequiredSecGroupId( CFLibDbKeyHash256 requiredSecGroupId );
 
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredName();
 	public void setRequiredName( String value );
 	public boolean getRequiredIsVisible();

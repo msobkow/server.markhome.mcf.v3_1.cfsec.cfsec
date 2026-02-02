@@ -63,8 +63,8 @@ public interface ICFSecTenantH
 
 	public ICFSecTenantHPKey getPKey();
 	public void setPKey( ICFSecTenantHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
@@ -77,8 +77,8 @@ public interface ICFSecTenantH
 	public CFLibDbKeyHash256 getRequiredId();
 	public void setRequiredId( CFLibDbKeyHash256 requiredId );
 
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredTenantName();
 	public void setRequiredTenantName( String value );
 	@Override

@@ -53,7 +53,7 @@ public class CFSecClusterObj
 	protected boolean isNew;
 	protected ICFSecClusterEditObj edit;
 	protected ICFSecSchemaObj schema;
-	protected Long pKey;
+	protected CFLibDbKeyHash256 pKey;
 	protected ICFSecCluster rec;
 	protected List<ICFSecHostNodeObj> optionalComponentsHostNode;
 	protected List<ICFSecTenantObj> optionalComponentsTenant;
@@ -290,12 +290,12 @@ public class CFSecClusterObj
 	}
 
 	@Override
-	public Long getPKey() {
+	public CFLibDbKeyHash256 getPKey() {
 		return( pKey );
 	}
 
 	@Override
-	public void setPKey( Long value ) {
+	public void setPKey( CFLibDbKeyHash256 value ) {
 		if( pKey != value ) {
        		pKey = value;
 			copyPKeyToRec();
@@ -372,7 +372,7 @@ public class CFSecClusterObj
 	}
 
 	@Override
-	public long getRequiredId() {
+	public CFLibDbKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 

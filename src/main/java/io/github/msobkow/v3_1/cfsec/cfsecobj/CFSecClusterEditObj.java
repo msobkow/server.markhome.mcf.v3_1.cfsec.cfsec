@@ -386,12 +386,12 @@ public class CFSecClusterEditObj
 	}
 
 	@Override
-	public Long getPKey() {
+	public CFLibDbKeyHash256 getPKey() {
 		return( orig.getPKey() );
 	}
 
 	@Override
-	public void setPKey( Long value ) {
+	public void setPKey( CFLibDbKeyHash256 value ) {
 		orig.setPKey( value );
 		copyPKeyToRec();
 	}
@@ -407,12 +407,12 @@ public class CFSecClusterEditObj
 	}
 
 	@Override
-	public long getRequiredId() {
+	public CFLibDbKeyHash256 getRequiredId() {
 		return( getPKey() );
 	}
 
 	@Override
-	public void setRequiredId(long id) {
+	public void setRequiredId(CFLibDbKeyHash256 id) {
 		if (getPKey() != id) {
 			setPKey(id);
 			optionalComponentsHostNode = null;

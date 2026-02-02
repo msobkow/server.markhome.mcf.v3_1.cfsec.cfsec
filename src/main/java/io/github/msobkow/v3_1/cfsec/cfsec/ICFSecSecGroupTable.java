@@ -104,7 +104,7 @@ public interface ICFSecSecGroupTable
 	 *	@param	ClusterId	The SecGroup key attribute of the instance generating the id.
 	 */
 	void deleteSecGroupByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the SecGroup instances identified by the key ClusterIdx.
@@ -125,7 +125,7 @@ public interface ICFSecSecGroupTable
 	 *	@param	IsVisible	The SecGroup key attribute of the instance generating the id.
 	 */
 	void deleteSecGroupByClusterVisIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		boolean argIsVisible );
 
 	/**
@@ -147,7 +147,7 @@ public interface ICFSecSecGroupTable
 	 *	@param	Name	The SecGroup key attribute of the instance generating the id.
 	 */
 	void deleteSecGroupByUNameIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		String argName );
 
 	/**
@@ -219,7 +219,7 @@ public interface ICFSecSecGroupTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecGroup[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the derived SecGroup record instances identified by the duplicate key ClusterVisIdx.
@@ -233,7 +233,7 @@ public interface ICFSecSecGroupTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecGroup[] readDerivedByClusterVisIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
 	/**
@@ -249,7 +249,7 @@ public interface ICFSecSecGroupTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecGroup readDerivedByUNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String Name );
 
 	/**
@@ -318,7 +318,7 @@ public interface ICFSecSecGroupTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGroup[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the specific SecGroup record instances identified by the duplicate key ClusterVisIdx.
@@ -334,7 +334,7 @@ public interface ICFSecSecGroupTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGroup[] readRecByClusterVisIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		boolean IsVisible );
 
 	/**
@@ -352,6 +352,6 @@ public interface ICFSecSecGroupTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGroup readRecByUNameIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		String Name );
 }

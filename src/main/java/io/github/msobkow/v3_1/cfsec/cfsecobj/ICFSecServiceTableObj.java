@@ -182,7 +182,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	List of CFSecServiceObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecServiceObj> readServiceByClusterIdx( long ClusterId );
+	List<ICFSecServiceObj> readServiceByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Get the map of CFSecServiceObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -192,7 +192,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	List of CFSecServiceObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecServiceObj> readServiceByClusterIdx( long ClusterId,
+	List<ICFSecServiceObj> readServiceByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead );
 
 	/**
@@ -249,7 +249,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	CFSecServiceObj cached instance for the unique UTypeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecServiceObj readServiceByUTypeIdx(long ClusterId,
+	ICFSecServiceObj readServiceByUTypeIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
@@ -265,7 +265,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	CFSecServiceObj refreshed instance for the unique UTypeIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecServiceObj readServiceByUTypeIdx(long ClusterId,
+	ICFSecServiceObj readServiceByUTypeIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId,
 		boolean forceRead );
@@ -282,7 +282,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	CFSecServiceObj cached instance for the unique UHostPortIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecServiceObj readServiceByUHostPortIdx(long ClusterId,
+	ICFSecServiceObj readServiceByUHostPortIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 
@@ -298,40 +298,40 @@ public interface ICFSecServiceTableObj
 	 *	@return	CFSecServiceObj refreshed instance for the unique UHostPortIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecServiceObj readServiceByUHostPortIdx(long ClusterId,
+	ICFSecServiceObj readServiceByUHostPortIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort,
 		boolean forceRead );
 
 	ICFSecServiceObj readCachedServiceByIdIdx( CFLibDbKeyHash256 ServiceId );
 
-	List<ICFSecServiceObj> readCachedServiceByClusterIdx( long ClusterId );
+	List<ICFSecServiceObj> readCachedServiceByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	List<ICFSecServiceObj> readCachedServiceByHostIdx( CFLibDbKeyHash256 HostNodeId );
 
 	List<ICFSecServiceObj> readCachedServiceByTypeIdx( CFLibDbKeyHash256 ServiceTypeId );
 
-	ICFSecServiceObj readCachedServiceByUTypeIdx( long ClusterId,
+	ICFSecServiceObj readCachedServiceByUTypeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
-	ICFSecServiceObj readCachedServiceByUHostPortIdx( long ClusterId,
+	ICFSecServiceObj readCachedServiceByUHostPortIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 
 	void deepDisposeServiceByIdIdx( CFLibDbKeyHash256 ServiceId );
 
-	void deepDisposeServiceByClusterIdx( long ClusterId );
+	void deepDisposeServiceByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	void deepDisposeServiceByHostIdx( CFLibDbKeyHash256 HostNodeId );
 
 	void deepDisposeServiceByTypeIdx( CFLibDbKeyHash256 ServiceTypeId );
 
-	void deepDisposeServiceByUTypeIdx( long ClusterId,
+	void deepDisposeServiceByUTypeIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
-	void deepDisposeServiceByUHostPortIdx( long ClusterId,
+	void deepDisposeServiceByUHostPortIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 
@@ -344,7 +344,7 @@ public interface ICFSecServiceTableObj
 	 *	@return	A List of Service-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecServiceObj> pageServiceByClusterIdx( long ClusterId,
+	List<ICFSecServiceObj> pageServiceByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorServiceId );
 
 	/**
@@ -393,7 +393,7 @@ public interface ICFSecServiceTableObj
 	 *
 	 *	@param	ClusterId	The Service key attribute of the instance generating the id.
 	 */
-	void deleteServiceByClusterIdx( long ClusterId );
+	void deleteServiceByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -418,7 +418,7 @@ public interface ICFSecServiceTableObj
 	 *
 	 *	@param	ServiceTypeId	The Service key attribute of the instance generating the id.
 	 */
-	void deleteServiceByUTypeIdx(long ClusterId,
+	void deleteServiceByUTypeIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		CFLibDbKeyHash256 ServiceTypeId );
 
@@ -431,7 +431,7 @@ public interface ICFSecServiceTableObj
 	 *
 	 *	@param	HostPort	The Service key attribute of the instance generating the id.
 	 */
-	void deleteServiceByUHostPortIdx(long ClusterId,
+	void deleteServiceByUHostPortIdx(CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 HostNodeId,
 		short HostPort );
 }

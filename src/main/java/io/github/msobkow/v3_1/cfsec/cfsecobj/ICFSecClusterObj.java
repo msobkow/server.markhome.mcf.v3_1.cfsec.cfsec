@@ -189,18 +189,18 @@ public interface ICFSecClusterObj
 	/**
 	 *	Get the primary key of this instance.
 	 *
-	 *	@return	Long primary key for this instance.
+	 *	@return	CFLibDbKeyHash256 primary key for this instance.
 	 */
-	Long getPKey();
+	CFLibDbKeyHash256 getPKey();
 
 	/**
 	 *	Set the primary key of this instance.
 	 *	<p>
 	 *	This method should only be invoked by implementation internals.
 	 *
-	 *	@param Long primary key value for this instance.
+	 *	@param CFLibDbKeyHash256 primary key value for this instance.
 	 */
-	void setPKey( Long value );
+	void setPKey( CFLibDbKeyHash256 value );
 
 	/**
 	 *	Is this a new instance?
@@ -276,11 +276,11 @@ public interface ICFSecClusterObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster( boolean forceRead );
 
 	/**
-	 *	Get the required long attribute Id.
+	 *	Get the required CFLibDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required long attribute Id.
+	 *	@return	The required CFLibDbKeyHash256 attribute Id.
 	 */
-	long getRequiredId();
+	CFLibDbKeyHash256 getRequiredId();
 
 	/**
 	 *	Get the required String attribute FullDomName.

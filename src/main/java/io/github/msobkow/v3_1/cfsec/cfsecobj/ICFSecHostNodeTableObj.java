@@ -182,7 +182,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	List of CFSecHostNodeObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecHostNodeObj> readHostNodeByClusterIdx( long ClusterId );
+	List<ICFSecHostNodeObj> readHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Get the map of CFSecHostNodeObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -192,7 +192,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	List of CFSecHostNodeObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecHostNodeObj> readHostNodeByClusterIdx( long ClusterId,
+	List<ICFSecHostNodeObj> readHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	CFSecHostNodeObj cached instance for the unique UDescrIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecHostNodeObj readHostNodeByUDescrIdx(long ClusterId,
+	ICFSecHostNodeObj readHostNodeByUDescrIdx(CFLibDbKeyHash256 ClusterId,
 		String Description );
 
 	/**
@@ -218,7 +218,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	CFSecHostNodeObj refreshed instance for the unique UDescrIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecHostNodeObj readHostNodeByUDescrIdx(long ClusterId,
+	ICFSecHostNodeObj readHostNodeByUDescrIdx(CFLibDbKeyHash256 ClusterId,
 		String Description,
 		boolean forceRead );
 
@@ -232,7 +232,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	CFSecHostNodeObj cached instance for the unique HostNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecHostNodeObj readHostNodeByHostNameIdx(long ClusterId,
+	ICFSecHostNodeObj readHostNodeByHostNameIdx(CFLibDbKeyHash256 ClusterId,
 		String HostName );
 
 	/**
@@ -245,28 +245,28 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	CFSecHostNodeObj refreshed instance for the unique HostNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecHostNodeObj readHostNodeByHostNameIdx(long ClusterId,
+	ICFSecHostNodeObj readHostNodeByHostNameIdx(CFLibDbKeyHash256 ClusterId,
 		String HostName,
 		boolean forceRead );
 
 	ICFSecHostNodeObj readCachedHostNodeByIdIdx( CFLibDbKeyHash256 HostNodeId );
 
-	List<ICFSecHostNodeObj> readCachedHostNodeByClusterIdx( long ClusterId );
+	List<ICFSecHostNodeObj> readCachedHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	ICFSecHostNodeObj readCachedHostNodeByUDescrIdx( long ClusterId,
+	ICFSecHostNodeObj readCachedHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description );
 
-	ICFSecHostNodeObj readCachedHostNodeByHostNameIdx( long ClusterId,
+	ICFSecHostNodeObj readCachedHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName );
 
 	void deepDisposeHostNodeByIdIdx( CFLibDbKeyHash256 HostNodeId );
 
-	void deepDisposeHostNodeByClusterIdx( long ClusterId );
+	void deepDisposeHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	void deepDisposeHostNodeByUDescrIdx( long ClusterId,
+	void deepDisposeHostNodeByUDescrIdx( CFLibDbKeyHash256 ClusterId,
 		String Description );
 
-	void deepDisposeHostNodeByHostNameIdx( long ClusterId,
+	void deepDisposeHostNodeByHostNameIdx( CFLibDbKeyHash256 ClusterId,
 		String HostName );
 
 	/**
@@ -278,7 +278,7 @@ public interface ICFSecHostNodeTableObj
 	 *	@return	A List of HostNode-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecHostNodeObj> pageHostNodeByClusterIdx( long ClusterId,
+	List<ICFSecHostNodeObj> pageHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorHostNodeId );
 
 	/**
@@ -303,7 +303,7 @@ public interface ICFSecHostNodeTableObj
 	 *
 	 *	@param	ClusterId	The HostNode key attribute of the instance generating the id.
 	 */
-	void deleteHostNodeByClusterIdx( long ClusterId );
+	void deleteHostNodeByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -312,7 +312,7 @@ public interface ICFSecHostNodeTableObj
 	 *
 	 *	@param	Description	The HostNode key attribute of the instance generating the id.
 	 */
-	void deleteHostNodeByUDescrIdx(long ClusterId,
+	void deleteHostNodeByUDescrIdx(CFLibDbKeyHash256 ClusterId,
 		String Description );
 
 	/**
@@ -322,6 +322,6 @@ public interface ICFSecHostNodeTableObj
 	 *
 	 *	@param	HostName	The HostNode key attribute of the instance generating the id.
 	 */
-	void deleteHostNodeByHostNameIdx(long ClusterId,
+	void deleteHostNodeByHostNameIdx(CFLibDbKeyHash256 ClusterId,
 		String HostName );
 }

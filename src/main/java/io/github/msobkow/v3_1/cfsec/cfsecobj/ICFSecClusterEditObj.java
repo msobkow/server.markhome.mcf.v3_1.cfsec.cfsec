@@ -140,18 +140,18 @@ public interface ICFSecClusterEditObj
 	List<ICFSecSysClusterObj> getOptionalComponentsSysCluster();
 
 	/**
-	 *	Get the required long attribute Id.
+	 *	Get the required CFLibDbKeyHash256 attribute Id.
 	 *
-	 *	@return	The required long attribute Id.
+	 *	@return	The required CFLibDbKeyHash256 attribute Id.
 	 */
-	long getRequiredId();
+	CFLibDbKeyHash256 getRequiredId();
 
 	/**
-	 *	Set the required long attribute Id.
+	 *	Set the required CFLibDbKeyHash256 attribute Id.
 	 *
-	 *	@param value The required long attribute Id value to be applied.
+	 *	@param value The required CFLibDbKeyHash256 attribute Id value to be applied.
 	 */
-	void setRequiredId(long value);
+	void setRequiredId(CFLibDbKeyHash256 value);
 
 	/**
 	 *	Get the required String attribute FullDomName.

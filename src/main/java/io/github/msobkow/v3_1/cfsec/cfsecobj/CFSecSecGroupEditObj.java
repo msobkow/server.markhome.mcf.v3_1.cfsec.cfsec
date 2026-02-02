@@ -414,7 +414,7 @@ public class CFSecSecGroupEditObj
 	}
 
 	@Override
-	public long getRequiredClusterId() {
+	public CFLibDbKeyHash256 getRequiredClusterId() {
 		return( getSecGroupRec().getRequiredClusterId() );
 	}
 

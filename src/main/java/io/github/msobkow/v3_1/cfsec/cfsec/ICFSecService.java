@@ -54,7 +54,8 @@ public interface ICFSecService
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SERVICEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SERVICEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SERVICEID_INIT_VALUE );
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String S_HOSTNODEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 HOSTNODEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_HOSTNODEID_INIT_VALUE );
 	public static final String S_SERVICETYPEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
@@ -86,12 +87,12 @@ public interface ICFSecService
 	public ICFSecHostNode getOptionalContainerHost();
 	public ICFSecServiceType getOptionalParentServiceType();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
-	public void setRequiredOwnerCluster(long argClusterId);
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setOptionalContainerHost(ICFSecHostNode argObj);
 	public void setOptionalContainerHost(CFLibDbKeyHash256 argHostNodeId);
 	public void setOptionalParentServiceType(ICFSecServiceType argObj);
 	public void setOptionalParentServiceType(CFLibDbKeyHash256 argServiceTypeId);
-	public long getRequiredClusterId();
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	public CFLibDbKeyHash256 getRequiredHostNodeId();
 	public CFLibDbKeyHash256 getRequiredServiceTypeId();
 	public short getRequiredHostPort();

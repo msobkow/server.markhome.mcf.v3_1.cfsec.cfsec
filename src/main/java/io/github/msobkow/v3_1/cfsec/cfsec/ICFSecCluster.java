@@ -51,7 +51,8 @@ public interface ICFSecCluster
         public static final CFLibDbKeyHash256 INIT_CREATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_CREATED_BY);
         public static final String S_INIT_UPDATED_BY = "0000000000000000000000000000000000000000000000000000000000000000";
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
-	public static final long ID_INIT_VALUE = 0L;
+	public static final String S_ID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 ID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_ID_INIT_VALUE );
 	public static final String FULLDOMNAME_INIT_VALUE = new String( "" );
 	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa001;
@@ -68,15 +69,15 @@ public interface ICFSecCluster
 	public LocalDateTime getUpdatedAt();
 	public void setUpdatedAt( LocalDateTime value );
 
-	public Long getPKey();
-	public void setPKey(Long requiredId);
+	public CFLibDbKeyHash256 getPKey();
+	public void setPKey(CFLibDbKeyHash256 requiredId);
 	
 	public List<ICFSecHostNode> getOptionalComponentsHostNode();
 	public List<ICFSecTenant> getOptionalComponentsTenant();
 	public List<ICFSecSecGroup> getOptionalComponentsSecGroup();
 	public List<ICFSecSysCluster> getOptionalComponentsSysCluster();
-	public long getRequiredId();
-	public void setRequiredId( long value );
+	public CFLibDbKeyHash256 getRequiredId();
+	public void setRequiredId( CFLibDbKeyHash256 value );
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 

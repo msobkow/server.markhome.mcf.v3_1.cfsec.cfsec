@@ -47,8 +47,8 @@ import io.github.msobkow.v3_1.cflib.xml.CFLibXmlUtil;
 
 public interface ICFSecSecGroupByClusterIdxKey
 {
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 

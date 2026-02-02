@@ -56,7 +56,7 @@ public class CFSecSchemaObj
 	protected String secTenantName = "system";
 	protected String secUserName = "system";
 	protected ICFSecClusterObj secCluster = null;
-	protected long secClusterId = 0L;
+	protected CFLibDbKeyHash256 secClusterId = null;
 	protected ICFSecTenantObj secTenant = null;
 	protected CFLibDbKeyHash256 secTenantId = null;
 	protected ICFSecSecUserObj secUser = null;
@@ -137,7 +137,7 @@ public class CFSecSchemaObj
 			}
 			else {
 				secCluster = getClusterTableObj().readClusterByUDomNameIdx( secClusterName );
-				if( ( secCluster == null ) && ( secClusterId > 0 ) ) {
+				if( secCluster == null && secClusterId != null && !secClusterId.isNull() ) {
 					secCluster = getClusterTableObj().readClusterByIdIdx( secClusterId );
 				}
 			}
@@ -164,7 +164,7 @@ public class CFSecSchemaObj
 		}
 	}
 
-	public long getSecClusterId() {
+	public CFLibDbKeyHash256 getSecClusterId() {
 		return( secClusterId );
 	}
 

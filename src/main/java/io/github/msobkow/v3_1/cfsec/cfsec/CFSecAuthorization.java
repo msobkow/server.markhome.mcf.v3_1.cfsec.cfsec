@@ -58,10 +58,10 @@ public class CFSecAuthorization implements ICFSecAuthorization, Serializable
 	protected CFLibUuid6 authUuid6;
 	protected String authUuid6Str;
 
-	protected long secClusterId = 0L;
-	protected CFLibDbKeyHash256 secTenantId = new CFLibDbKeyHash256(0);
-	protected CFLibDbKeyHash256 secSessionId = new CFLibDbKeyHash256(0);
-	protected CFLibDbKeyHash256 secUserId = new CFLibDbKeyHash256(0);
+	protected CFLibDbKeyHash256 secClusterId = CFLibDbKeyHash256.nullGet();
+	protected CFLibDbKeyHash256 secTenantId = CFLibDbKeyHash256.nullGet();
+	protected CFLibDbKeyHash256 secSessionId = CFLibDbKeyHash256.nullGet();
+	protected CFLibDbKeyHash256 secUserId = CFLibDbKeyHash256.nullGet();
 
 	public CFSecAuthorization() {
 		authUuid6 = CFLibUuid6.generateUuid6();
@@ -81,11 +81,11 @@ public class CFSecAuthorization implements ICFSecAuthorization, Serializable
 		return( authUuid6Str );
 	}
 
-	public long getSecClusterId() {
+	public CFLibDbKeyHash256 getSecClusterId() {
 		return( secClusterId );
 	}
 
-	public void setSecClusterId( long clusterId ) {
+	public void setSecClusterId( CFLibDbKeyHash256 clusterId ) {
 		secClusterId = clusterId;
 	}
 

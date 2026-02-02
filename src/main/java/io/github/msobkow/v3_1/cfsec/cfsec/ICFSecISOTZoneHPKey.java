@@ -51,8 +51,8 @@ import io.github.msobkow.v3_1.cflib.xml.CFLibXmlUtil;
 public interface ICFSecISOTZoneHPKey
 {
 
-	public long getAuditClusterId();
-	public void setAuditClusterId( long value );
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId( CFLibDbKeyHash256 value );
 
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp( LocalDateTime value );

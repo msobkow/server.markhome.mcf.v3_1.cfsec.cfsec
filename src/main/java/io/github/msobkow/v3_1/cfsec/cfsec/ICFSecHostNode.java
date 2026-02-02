@@ -53,7 +53,8 @@ public interface ICFSecHostNode
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_HOSTNODEID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 HOSTNODEID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_HOSTNODEID_INIT_VALUE );
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String DESCRIPTION_INIT_VALUE = new String( "" );
 	public static final String HOSTNAME_INIT_VALUE = new String( "" );
 	public final static int CLASS_CODE = 0xa002;
@@ -81,8 +82,8 @@ public interface ICFSecHostNode
 
 	public ICFSecCluster getRequiredContainerCluster();
 	public void setRequiredContainerCluster(ICFSecCluster argObj);
-	public void setRequiredContainerCluster(long argClusterId);
-	public long getRequiredClusterId();
+	public void setRequiredContainerCluster(CFLibDbKeyHash256 argClusterId);
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	public String getRequiredDescription();
 	public void setRequiredDescription( String value );
 	public String getRequiredHostName();

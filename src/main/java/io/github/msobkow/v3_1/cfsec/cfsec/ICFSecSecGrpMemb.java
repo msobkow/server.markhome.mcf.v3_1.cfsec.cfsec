@@ -53,7 +53,8 @@ public interface ICFSecSecGrpMemb
         public static final CFLibDbKeyHash256 INIT_UPDATED_BY = CFLibDbKeyHash256.fromHex(S_INIT_UPDATED_BY);
 	public static final String S_SECGRPMEMBID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECGRPMEMBID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECGRPMEMBID_INIT_VALUE );
-	public static final long CLUSTERID_INIT_VALUE = 0L;
+	public static final String S_CLUSTERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
+	public static final CFLibDbKeyHash256 CLUSTERID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_CLUSTERID_INIT_VALUE );
 	public static final String S_SECGROUPID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
 	public static final CFLibDbKeyHash256 SECGROUPID_INIT_VALUE = CFLibDbKeyHash256.fromHex( S_SECGROUPID_INIT_VALUE );
 	public static final String S_SECUSERID_INIT_VALUE = "$switch HasInitValue yes InitValue default Zero256bits$";
@@ -84,12 +85,12 @@ public interface ICFSecSecGrpMemb
 	public ICFSecSecGroup getRequiredContainerGroup();
 	public ICFSecSecUser getRequiredParentUser();
 	public void setRequiredOwnerCluster(ICFSecCluster argObj);
-	public void setRequiredOwnerCluster(long argClusterId);
+	public void setRequiredOwnerCluster(CFLibDbKeyHash256 argClusterId);
 	public void setRequiredContainerGroup(ICFSecSecGroup argObj);
 	public void setRequiredContainerGroup(CFLibDbKeyHash256 argSecGroupId);
 	public void setRequiredParentUser(ICFSecSecUser argObj);
 	public void setRequiredParentUser(CFLibDbKeyHash256 argSecUserId);
-	public long getRequiredClusterId();
+	public CFLibDbKeyHash256 getRequiredClusterId();
 	public CFLibDbKeyHash256 getRequiredSecGroupId();
 	public CFLibDbKeyHash256 getRequiredSecUserId();
 	@Override

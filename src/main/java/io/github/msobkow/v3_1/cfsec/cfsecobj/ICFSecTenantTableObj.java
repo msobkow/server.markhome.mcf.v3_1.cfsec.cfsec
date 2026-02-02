@@ -182,7 +182,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	List of CFSecTenantObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTenantObj> readTenantByClusterIdx( long ClusterId );
+	List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Get the map of CFSecTenantObj instances sorted by their primary keys for the duplicate ClusterIdx key.
@@ -192,7 +192,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	List of CFSecTenantObj cached instances sorted by their primary keys for the duplicate ClusterIdx key,
 	 *		which may be an empty set.
 	 */
-	List<ICFSecTenantObj> readTenantByClusterIdx( long ClusterId,
+	List<ICFSecTenantObj> readTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		boolean forceRead );
 
 	/**
@@ -205,7 +205,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj cached instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByUNameIdx(long ClusterId,
+	ICFSecTenantObj readTenantByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -218,22 +218,22 @@ public interface ICFSecTenantTableObj
 	 *	@return	CFSecTenantObj refreshed instance for the unique UNameIdx key, or
 	 *		null if no such instance exists.
 	 */
-	ICFSecTenantObj readTenantByUNameIdx(long ClusterId,
+	ICFSecTenantObj readTenantByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String TenantName,
 		boolean forceRead );
 
 	ICFSecTenantObj readCachedTenantByIdIdx( CFLibDbKeyHash256 Id );
 
-	List<ICFSecTenantObj> readCachedTenantByClusterIdx( long ClusterId );
+	List<ICFSecTenantObj> readCachedTenantByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	ICFSecTenantObj readCachedTenantByUNameIdx( long ClusterId,
+	ICFSecTenantObj readCachedTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	void deepDisposeTenantByIdIdx( CFLibDbKeyHash256 Id );
 
-	void deepDisposeTenantByClusterIdx( long ClusterId );
+	void deepDisposeTenantByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
-	void deepDisposeTenantByUNameIdx( long ClusterId,
+	void deepDisposeTenantByUNameIdx( CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	/**
@@ -245,7 +245,7 @@ public interface ICFSecTenantTableObj
 	 *	@return	A List of Tenant-derived instances sorted by their primary keys,
 	 *		as identified by the key attributes, which may be an empty set.
 	 */
-	List<ICFSecTenantObj> pageTenantByClusterIdx( long ClusterId,
+	List<ICFSecTenantObj> pageTenantByClusterIdx( CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorId );
 
 	/**
@@ -270,7 +270,7 @@ public interface ICFSecTenantTableObj
 	 *
 	 *	@param	ClusterId	The Tenant key attribute of the instance generating the id.
 	 */
-	void deleteTenantByClusterIdx( long ClusterId );
+	void deleteTenantByClusterIdx( CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Internal use only.
@@ -279,7 +279,7 @@ public interface ICFSecTenantTableObj
 	 *
 	 *	@param	TenantName	The Tenant key attribute of the instance generating the id.
 	 */
-	void deleteTenantByUNameIdx(long ClusterId,
+	void deleteTenantByUNameIdx(CFLibDbKeyHash256 ClusterId,
 		String TenantName );
 
 	ICFSecTenantObj getSystemTenant();

@@ -63,8 +63,8 @@ public interface ICFSecHostNodeH
 
 	public ICFSecHostNodeHPKey getPKey();
 	public void setPKey( ICFSecHostNodeHPKey pkey );
-	public long getAuditClusterId();
-	public void setAuditClusterId(long auditClusterId);
+	public CFLibDbKeyHash256 getAuditClusterId();
+	public void setAuditClusterId(CFLibDbKeyHash256 auditClusterId);
 	public LocalDateTime getAuditStamp();
 	public void setAuditStamp(LocalDateTime auditStamp);
 	public short getAuditActionId();
@@ -77,8 +77,8 @@ public interface ICFSecHostNodeH
 	public CFLibDbKeyHash256 getRequiredHostNodeId();
 	public void setRequiredHostNodeId( CFLibDbKeyHash256 requiredHostNodeId );
 
-	public long getRequiredClusterId();
-	public void setRequiredClusterId( long value );
+	public CFLibDbKeyHash256 getRequiredClusterId();
+	public void setRequiredClusterId( CFLibDbKeyHash256 value );
 	public String getRequiredDescription();
 	public void setRequiredDescription( String value );
 	public String getRequiredHostName();

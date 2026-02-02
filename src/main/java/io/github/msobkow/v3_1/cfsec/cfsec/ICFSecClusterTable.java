@@ -95,7 +95,7 @@ public interface ICFSecClusterTable
 	 *	@param	argKey	The primary key identifying the instance to be deleted.
 	 */
 	void deleteClusterByIdIdx( ICFSecAuthorization Authorization,
-		Long argKey );
+		CFLibDbKeyHash256 argKey );
 	/**
 	 *	Delete the Cluster instances identified by the key UDomNameIdx.
 	 *
@@ -147,7 +147,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerived( ICFSecAuthorization Authorization,
-		Long PKey );
+		CFLibDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the derived Cluster record instance by primary key.
@@ -160,7 +160,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster lockDerived( ICFSecAuthorization Authorization,
-		Long PKey );
+		CFLibDbKeyHash256 PKey );
 
 	/**
 	 *	Read all Cluster instances.
@@ -182,7 +182,7 @@ public interface ICFSecClusterTable
 	 *		no such existing key value.
 	 */
 	ICFSecCluster readDerivedByIdIdx( ICFSecAuthorization Authorization,
-		long Id );
+		CFLibDbKeyHash256 Id );
 
 	/**
 	 *	Read the derived Cluster record instance identified by the unique key UDomNameIdx.
@@ -223,7 +223,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRec( ICFSecAuthorization Authorization,
-		Long PKey );
+		CFLibDbKeyHash256 PKey );
 
 	/**
 	 *	Lock the specific Cluster record instance identified by the primary key.
@@ -238,7 +238,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster lockRec( ICFSecAuthorization Authorization,
-		Long PKey );
+		CFLibDbKeyHash256 PKey );
 
 	/**
 	 *	Read all the specific Cluster record instances.
@@ -257,7 +257,7 @@ public interface ICFSecClusterTable
 	 *	@return All the specific Cluster instances in the database accessible for the Authorization.
 	 */
 	ICFSecCluster[] pageAllRec( ICFSecAuthorization Authorization,
-		Long priorId );
+		CFLibDbKeyHash256 priorId );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the unique key IdIdx.
@@ -272,7 +272,7 @@ public interface ICFSecClusterTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecCluster readRecByIdIdx( ICFSecAuthorization Authorization,
-		long Id );
+		CFLibDbKeyHash256 Id );
 
 	/**
 	 *	Read the specific Cluster record instance identified by the unique key UDomNameIdx.

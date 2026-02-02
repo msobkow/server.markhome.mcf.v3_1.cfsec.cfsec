@@ -104,7 +104,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@param	ClusterId	The SecGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecGrpMembByClusterIdx( ICFSecAuthorization Authorization,
-		long argClusterId );
+		CFLibDbKeyHash256 argClusterId );
 
 	/**
 	 *	Delete the SecGrpMemb instances identified by the key ClusterIdx.
@@ -165,7 +165,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@param	SecUserId	The SecGrpMemb key attribute of the instance generating the id.
 	 */
 	void deleteSecGrpMembByUUserIdx( ICFSecAuthorization Authorization,
-		long argClusterId,
+		CFLibDbKeyHash256 argClusterId,
 		CFLibDbKeyHash256 argSecGroupId,
 		CFLibDbKeyHash256 argSecUserId );
 
@@ -238,7 +238,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@return An array of derived instances for the specified key, potentially with 0 elements in the set.
 	 */
 	ICFSecSecGrpMemb[] readDerivedByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the derived SecGrpMemb record instances identified by the duplicate key GroupIdx.
@@ -279,7 +279,7 @@ public interface ICFSecSecGrpMembTable
 	 *		no such existing key value.
 	 */
 	ICFSecSecGrpMemb readDerivedByUUserIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 SecUserId );
 
@@ -359,7 +359,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpMemb[] readRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId );
+		CFLibDbKeyHash256 ClusterId );
 
 	/**
 	 *	Read an array of the specific SecGrpMemb record instances identified by the duplicate key GroupIdx.
@@ -406,7 +406,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpMemb readRecByUUserIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 SecGroupId,
 		CFLibDbKeyHash256 SecUserId );
 
@@ -422,7 +422,7 @@ public interface ICFSecSecGrpMembTable
 	 *	@throws	CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	ICFSecSecGrpMemb[] pageRecByClusterIdx( ICFSecAuthorization Authorization,
-		long ClusterId,
+		CFLibDbKeyHash256 ClusterId,
 		CFLibDbKeyHash256 priorSecGrpMembId );
 
 	/**

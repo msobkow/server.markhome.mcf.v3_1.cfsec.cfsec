@@ -58,8 +58,8 @@ public interface ICFSecAuthorization
 	public void setAuthUuid6( CFLibUuid6 value );
 	public String getAuthUuid6Str();
 
-	public long getSecClusterId();
-	public void setSecClusterId( long clusterId );
+	public CFLibDbKeyHash256 getSecClusterId();
+	public void setSecClusterId( CFLibDbKeyHash256 clusterId );
 	public void setSecCluster( ICFSecClusterObj value );
 	public CFLibDbKeyHash256 getSecTenantId();
 	public void setSecTenantId( CFLibDbKeyHash256 tenantId );
