@@ -35,7 +35,10 @@
 package io.github.msobkow.v3_1.cfsec.cfsec;
 
 import java.io.Serializable;
+import java.nio.charset.StandardCharsets;
 import java.math.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.time.*;
 import java.util.*;
 import java.util.concurrent.atomic.*;
@@ -182,6 +185,87 @@ public interface ICFSecSchema
 			}
 		}
 		return( retval );
+	}
+
+	static final AtomicReference<CFLibDbKeyHash256> sysClusterId = new AtomicReference<>();
+	static final AtomicReference<CFLibDbKeyHash256> sysTenantId = new AtomicReference<>();
+	static final AtomicReference<CFLibDbKeyHash256> sysAdminId = new AtomicReference<>();
+
+	public static String getPasswordHash(String pw) {
+		if (pw == null || pw.isEmpty()) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "getPasswordHash", 1, "pw");
+		}
+		try {
+			MessageDigest md = MessageDigest.getInstance("SHA-512");
+            byte[] bytes = md.digest(pw.getBytes(StandardCharsets.UTF_8));
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < bytes.length; i++) {
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            return null;
+        }
+	}
+
+	public static CFLibDbKeyHash256 getSysClusterId() {
+		return (sysClusterId.get());
+	}
+
+	public static void setSysClusterId(CFLibDbKeyHash256 argClusterId) {
+		if (argClusterId == null || argClusterId.isNull()) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "setSysClusterId", 1, "argClusterId");
+		}
+		CFLibDbKeyHash256 oldid = sysClusterId.get();
+		if (oldid == null) {
+			sysClusterId.compareAndSet(null, argClusterId);
+		}
+		else if (oldid.isNull()) {
+			sysClusterId.compareAndSet(oldid, argClusterId);
+		}
+		else {
+			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSysClusterId", "sysClusterId has already been set", "sysClusterId has already been set");
+		}
+	}
+
+	public static CFLibDbKeyHash256 getSysTenantId() {
+		return (sysTenantId.get());
+	}
+
+	public static void setSysTenantId(CFLibDbKeyHash256 argTenantId) {
+		if (argTenantId == null || argTenantId.isNull()) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "setSysTenantId", 1, "argTenantId");
+		}
+		CFLibDbKeyHash256 oldid = sysTenantId.get();
+		if (oldid == null) {
+			sysTenantId.compareAndSet(null, argTenantId);
+		}
+		else if (oldid.isNull()) {
+			sysTenantId.compareAndSet(oldid, argTenantId);
+		}
+		else {
+			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSysTenantId", "sysTenantId has already been set", "sysTenantId has already been set");
+		}
+	}
+
+	public static CFLibDbKeyHash256 getSysAdminId() {
+		return (sysAdminId.get());
+	}
+
+	public static void setSysAdminId(CFLibDbKeyHash256 argAdminId) {
+		if (argAdminId == null || argAdminId.isNull()) {
+			throw new CFLibNullArgumentException(ICFSecSchema.class, "setSysAdminId", 1, "argAdminId");
+		}
+		CFLibDbKeyHash256 oldid = sysAdminId.get();
+		if (oldid == null) {
+			sysAdminId.compareAndSet(null, argAdminId);
+		}
+		else if (oldid.isNull()) {
+			sysAdminId.compareAndSet(oldid, argAdminId);
+		}
+		else {
+			throw new CFLibInvalidArgumentException(ICFSecSchema.class, "setSysAdminId", "sysAdminId has already been set", "sysAdminId has already been set");
+		}
 	}
 
 		public static ICFSecSchema getBackingCFSec() {
@@ -839,4 +923,6 @@ public interface ICFSecSchema
 	 *	@throws CFLibNotSupportedException thrown by client-side implementations.
 	 */
 	//public static void setTablePerms( ICFSecTablePerms value );
+
+	public void bootstrapSchema();
 }
