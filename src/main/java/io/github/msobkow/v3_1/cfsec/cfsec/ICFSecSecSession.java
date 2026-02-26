@@ -68,13 +68,8 @@ public interface ICFSecSecSession
 	public int getRequiredRevision();
 	public void setRequiredRevision( int value );
 
-	public ICFSecSecUser getRequiredContainerSecUser();
-	public ICFSecSecUser getRequiredParentSecProxy();
-	public void setRequiredContainerSecUser(ICFSecSecUser argObj);
-	public void setRequiredContainerSecUser(CFLibDbKeyHash256 argSecUserId);
-	public void setRequiredParentSecProxy(ICFSecSecUser argObj);
-	public void setRequiredParentSecProxy(CFLibDbKeyHash256 argSecProxyId);
 	public CFLibDbKeyHash256 getRequiredSecUserId();
+	public void setRequiredSecUserId( CFLibDbKeyHash256 value );
 	public String getOptionalSecDevName();
 	public void setOptionalSecDevName( String value );
 	public LocalDateTime getRequiredStart();
@@ -82,6 +77,7 @@ public interface ICFSecSecSession
 	public LocalDateTime getOptionalFinish();
 	public void setOptionalFinish( LocalDateTime value );
 	public CFLibDbKeyHash256 getOptionalSecProxyId();
+	public void setOptionalSecProxyId( CFLibDbKeyHash256 value );
 	@Override
 	public boolean equals( Object obj );
 	

@@ -76,8 +76,6 @@ public interface ICFSecSecUser
 	public void setPKey(CFLibDbKeyHash256 requiredSecUserId);
 	
 	public List<ICFSecSecDevice> getOptionalComponentsSecDev();
-	public List<ICFSecSecSession> getOptionalComponentsSecSess();
-	public List<ICFSecSecSession> getOptionalChildrenSecProxy();
 	public List<ICFSecSecGrpMemb> getOptionalChildrenSecGrpMemb();
 	public List<ICFSecTSecGrpMemb> getOptionalChildrenTSecGrpMemb();
 	public CFLibDbKeyHash256 getRequiredSecUserId();
