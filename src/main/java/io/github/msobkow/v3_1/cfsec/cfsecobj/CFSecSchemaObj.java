@@ -50,7 +50,7 @@ public class CFSecSchemaObj
 	implements ICFSecSchemaObj
 {
 	public static String SCHEMA_NAME = "CFSec";
-	public static String SCHEMA_DBNAME = "cfsec31";
+	public static String SCHEMA_DBNAME = "CFSec31";
 	protected ICFSecAuthorization authorization = null;
 	protected String secClusterName = "system";
 	protected String secTenantName = "system";
